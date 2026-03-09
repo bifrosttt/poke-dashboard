@@ -24,32 +24,11 @@ const Dashboard: React.FC = () => (
             </p>
           </div>
         </div>
-
-        <div className="flex items-center gap-3">
-          <span className="text-[10px] font-mono text-white/20 tracking-widest hidden sm:block">
-            POWERED BY POKEAPI
-          </span>
-          <a
-            href="https://pokeapi.co"
-            target="_blank"
-            rel="noreferrer"
-            className="text-xs font-mono text-white/20 hover:text-white/50 transition-colors px-3 py-1.5 rounded-lg border border-white/10 hover:border-white/20"
-          >
-            API ↗
-          </a>
-        </div>
       </div>
     </header>
 
     {/* Main */}
     <main className="max-w-screen-xl mx-auto px-6 py-8">
-      {/* Hero text */}
-      <div className="mb-10">
-        <h2 className="font-display text-5xl md:text-7xl tracking-widest text-white/10 select-none pointer-events-none">
-          GOTTA CATCH 'EM ALL
-        </h2>
-      </div>
-
       <PokemonList />
     </main>
   </div>
