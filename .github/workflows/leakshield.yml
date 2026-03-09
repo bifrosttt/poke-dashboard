@@ -1,0 +1,25 @@
+name: LeakShield Security Scan
+
+on:
+  pull_request:
+    branches:
+      - "main"
+      - "master"
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run LeakShield Scan
+        uses: molham27/leakshield-action@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          api-url: "https://smee.io/uAKyacjDF1Rtij8"
+          webhook-secret: ${{ secrets.LEAKSHIELD_WEBHOOK_SECRET }}
+          fail-on-findings: "true"
